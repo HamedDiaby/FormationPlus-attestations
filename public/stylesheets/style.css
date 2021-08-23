@@ -1,8 +1,54 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+label {
+  font-size: 10px; color: rgba(255, 0, 0, 0.623);
+}
+
+.container {
+  display: flex; justify-content: center;
+  align-items: center;
+}
+
+.selectText {
+  margin-bottom: 5px;
+  margin-left: 15px; color: #4A4A4A;
+}
+
+.inputCustum {
+  padding: 10px; border-radius: 20px;
+  outline: none; color: grey;
+}
+
+#submit {
+  width: 200px; height: 40px;
+  cursor: pointer; border-radius: 40px;
+  border: none; margin-top: 20px; align-self: center;
+  color: lightgrey; background-color: #4A4A4A;
+  transition: 0.5s;
+}
+
+#submit:hover {
+  background-color: #4a4a4a8f;
+  color: #4A4A4A;
+  transition: 0.5s;
+}
+
+header {
+  background-color: #4A4A4A;
+  color: lightgrey; margin: 0%; padding: 0%;
+  margin-bottom: 50px; display: flex;
+  align-items: center; padding: 10px;
+}
+
+h3 {
+  color: #4A4A4A;
+  text-align: center; text-decoration: underline;
 }

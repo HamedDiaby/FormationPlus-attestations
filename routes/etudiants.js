@@ -5,6 +5,8 @@ var request = require('sync-request');
 const etudiantModel = require('../models/etudiants');
 const conventionModel = require('../models/conventions');
 
+const apiKey = 'FormationPlus_API_KEY';
+
 /* GET creation de 500 étudiants automatiquement. */
 // router.get('/generateStudents', async function(req, res, next) {
   
@@ -28,5 +30,38 @@ const conventionModel = require('../models/conventions');
 //   res.json('Etudiants généré.')
 
 // });
+
+// GET la liste d'etudiants
+router.get('/list/:apiKey', async function(req, res, next) {
+
+  if(req.params.apiKey == apiKey){
+
+    var list = await etudiantModel.find();
+    res.json(list);
+
+  } else {
+    res.json('ApiKey non valide !')
+  }
+
+});
+
+// GET etudiant by ID
+router.get('/etudiant/:apiKey/:idEtudiant', async function(req, res, next) {
+
+  if(req.params.apiKey == apiKey){
+
+    if(req.query.convention == 'true'){
+      var student = await etudiantModel.findOne({idEtudiant: req.params.idEtudiant}).populate('convention');
+      res.json(student);
+    } else {
+      var student = await etudiantModel.findOne({idEtudiant: req.params.idEtudiant});
+      res.json(student);
+    }
+
+  } else {
+    res.json('ApiKey non valide !')
+  }
+
+});
 
 module.exports = router;

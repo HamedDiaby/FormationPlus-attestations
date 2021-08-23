@@ -1,11 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>FormationPlus - Attestations</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <header>
+      FormationPlus
+    </header>
+
+    <h3>Creer une attestation</h3>
+
+    <div class="container">
+
+      <form action="/attestations/newAttestation" method="post" id="myform">
+
+        <p class="selectText">Selectionner un etudiant :</p>
+        <label id="errorStudent"></label>
+        <select name="student" required class="inputCustum">
+          <option></option>
+          <%
+            for(let i = 0; i < studentList.length; i++){
+          %>
+            <option value='<%= JSON.stringify(studentList[i]) %>' ><%= studentList[i].prenom %> <%= studentList[i].nom %></option>
+          <%
+            }
+          %>
+        </select>
+
+        <p class="selectText">Convention :</p>
+        <input type="text" id="convention" class="inputCustum" disabled value="" required />
+
+        <p class="selectText">Saisir un message :</p>
+        <label id="errorMessage"></label>
+        <textarea name="message" id="message" class="inputCustum" cols="30" rows="10" required></textarea>
+
+        <button id="submit" type="submit">
+          Creer une attestation
+        </button>
+
+      </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+
   </body>
 </html>
