@@ -37,10 +37,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/HamedDiaby/FormationPlus-attestations.git
 
 # Go into the repository
-$ cd electron-markdownify
+$ cd FormationPlus-attestations
 
 # Install dependencies
 $ npm install
@@ -48,12 +48,6 @@ $ npm install
 # Run the app
 $ npm start
 ```
-
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
-
-## Emailware
-
-Markdownify is an [emailware](https://en.wiktionary.org/wiki/emailware). Meaning, if you liked using this app or it has helped you in any way, I'd like you send me an email at <bullredeyes@gmail.com> about anything you'd want to say about this software. I'd really appreciate it!
 
 ## Credits
 
