@@ -1,4 +1,4 @@
-const mongoose = require('./BDDconnexion');
+const mongoose = require('./connexionBDD');
 
 var etudiantsSchema = mongoose.Schema({
     idEtudiant: String,

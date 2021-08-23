@@ -1,4 +1,4 @@
-const mongoose = require('./BDDconnexion');
+const mongoose = require('./connexionBDD');
 
 var convetionsSchema = mongoose.Schema({
     idConvention: Number,
