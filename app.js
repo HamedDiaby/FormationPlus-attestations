@@ -11,9 +11,63 @@ var attestationsRouter = require('./routes/attestations');
 
 var app = express();
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
+
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Library Api',
+      version: '1.0.0'
+    }
+  },
+  apis: ['app.js']
+}
+
+const swaggerDoc = swaggerJsdoc(swaggerOptions)
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
+
+/**
+ * @swagger
+ * /etudiant/list:
+ *  get:
+ *    description: Get all Students
+ *    responses:
+ *      200:
+ *        description: success
+ *  
+ * /etudiant/etudiant:
+ *  get:
+ *    description: Get one student
+ *    parameters:
+ *    - name: idEtudiant
+ *    in: path
+ *    required: true
+ *    type: string
+ *  responses:
+ *      200:
+ *        description: success
+ * 
+ * /conventions/list:
+ *  get:
+ *    description: Get all conventions
+ *    responses:
+ *      200:
+ *        description: success
+ * 
+ * /attestations/list:
+ *  get:
+ *    description: Get all attestations
+ *    responses:
+ *      200:
+ *        description: success
+*/
 
 app.use(logger('dev'));
 app.use(express.json());

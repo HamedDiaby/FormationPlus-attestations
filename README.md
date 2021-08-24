@@ -26,6 +26,9 @@ $ npm install
 
 # Run the app
 $ npm start
+
+# Go into the api doc
+$ /api-docs
 ```
 
 ## Credits
